@@ -49,17 +49,23 @@
 
 <div class="icons-container">
   <i class="icons-icons"></i>
-    <!-- Your existing HTML content -->
-    <!-- ... -->
+   
   </div>
   <div class="page-layout">
-    <!-- Your existing content -->
-    <!-- ... -->
-
-    <!-- Image container -->
-    <div class="horizontal-picture">
-      <img src="~/assets/images/foodpic.png" alt="Horizontal Picture" />
-    </div>
+   
+</div>
+   
+<div class="background-image-container">
+  <!-- <img src="~/assets/images/meatchicken.png" alt="backgound-image-container" class="backgound-image-container"/> -->
+    <!-- <div class="background-image"></div> -->
+    <!-- <p>background picture</p> -->
+  <div style="position: absolute; bottom: 10px; left: 10px; background-color: rgba(255, 255, 255, 0.7); padding: 10px;">
+    <button class="btn" style="text-align: left;">More</button>
+    <div class="centered">
+      <p style="display: inline; margin: 0;">Meat</p>
+  <strong style="display: inline; margin-left: 10px;">Chicken</strong>
+</div>
+  </div>
   </div>
 
   <div class="filter-recipes">
@@ -80,6 +86,21 @@
          <li>Grain</li>
          <li>Fruite</li>
       </ul>
+
+      <div class="filter-subtitle">Cusine</div>
+          <ul class="filter-list">
+            <li>Asian</li>
+            <li>Italian</li>
+            <li>Chines</li>
+            <li>Thai</li>
+          </ul>
+
+          <div class="filter-subtitle">Goals</div>
+             <ul class="filter-list">
+              <div class="weight-loss">Weight Loss</div>
+              <li>Freshness</li>
+              <li>Rich Nutritions</li>
+             </ul>
 
   </header>
 </template>
@@ -108,6 +129,11 @@ export default {
 
 
 };
+
+
+
+
+
 
 
 </script>
@@ -194,26 +220,13 @@ button {
   font-weight: bold; 
 }
 
-.horizontal-picture {
- 
-  width: 100%;
-  margin: 0 auto; 
-}
-
-.horizontal-picture img {
-  
-  width: 100%;
-  height: auto; 
-  display: block; 
-}
-
 .search-input {
   display: flex;
   align-items: center;
 }
 .wide-input {
   width: 100%;
-  margin-left: 0px
+  margin-left: 0px;
 }
 
 .filter-recipes {
@@ -229,7 +242,7 @@ button {
 }
 
 .filter-subtitle {
-  color: rgb(167, 238, 144);
+  color: rgb(166, 238, 144);
   font-size: 25px;
 }
 
@@ -241,13 +254,73 @@ button {
 }
 
 .filter-list li {
-  margin: 6px 0;
+  margin: 10px 0;
 }
 
 .egg-free {
   color: rgb(166, 238, 144)
 }
+.weight-loss {
+  color: rgb(166, 238, 144)
+}
 
+.filter-subtitle {
+    margin-left: 40px;
+}
+.filter-list{
+  margin-left: 40px;
+}
+
+.background-image-container {
+  position: relative;
+  display: flex;
+  height: 400px;
+  width: 100%;
+  object-fit: contain;
+  background-image: url("~/assets/images/meatchicken.png"); 
+}
+
+
+.background-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: 60% 0%;
+  max-width: 100%;
+}
+
+.btn {
+  position: absolute;
+  bottom: 60px;
+  left: 200px;
+  transform: translate(-50%, -50%);
+  -ms-transform:translate(-50%, -50%);
+  background-color: auto;
+  color: white;
+  font-size: 24px;
+  padding: 24px 80px;
+  border: 1px solid;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+ .btn:hover {
+  background-color: black;
+}
+.centered {
+  position: absolute;
+  bottom: 1000%;
+  left:1000%;
+  transform:  translate(-50%, -50%);
+  color: white;
+  font-size: 46px;
+}
+
+.centered strong {
+  font-weight: bold;
+  display: inline;
+
+}
 </style>
 
 
