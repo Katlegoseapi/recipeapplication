@@ -64,9 +64,24 @@
     <div class="centered">
       <p style="display: inline; margin: 0;">Meat</p>
   <strong style="display: inline; margin-left: 10px;">Chicken</strong>
+  </div>
+
+  </div>
+  <div class="social-icons">
+  <a href="#" class="icon-link" @click="openFacebookProfile">
+    <img src="~/assets/images/facebook.png" alt="Facebook" />
+  </a>
+  <a href="#" class="icon-link" @click="openYouTubeChannel">
+    <img src="~/assets/images/youtube.jpg" alt="YouTube" />
+  </a>
+  <a href="#" class="icon-link" @click="openTwitterProfile">
+    <img src="~/assets/images/twitter.png" alt="Twitter" />
+  </a>
+  <a href="#" class="icon-link" @click="openPinterestProfile">
+    <img src="~/assets/images/pinterest.png" alt="Pinterest" />
+  </a>
+</div> 
 </div>
-  </div>
-  </div>
 
   <div class="filter-recipes">
       <div class="filter-title">Filter Recipes</div>
@@ -102,6 +117,18 @@
               <li>Rich Nutritions</li>
              </ul>
 
+             <div class="recipe-card">
+  <div class="image-container">
+    <img src="~/assets/images/img1.png" alt="Recipe Image">
+  </div>
+  <div class="info-container">
+    <h3 class="recipe-title">Thai Basil Tofu Stir Fry</h3>
+    <p class="duration">30 minutes</p>
+    <!-- Add other features as needed -->
+  </div>
+</div>
+
+
   </header>
 </template>
 
@@ -126,8 +153,21 @@ export default {
       
     },
   },
-
-
+  methods: {
+    openFacebookProfile() {
+      window.open('https://www.facebook.com/', '_blank');
+    },
+    openYouTubeChannel() {
+      window.open('https://www.youtube.com/', '_blank');
+    },
+    openTwitterProfile() {
+      window.open('https://twitter.com/home?lang=en', '_blank');
+    },
+    openPinterestProfile() {
+      window.open('https://za.pinterest.com/#top', '_blank');
+    },
+  }
+ 
 };
 
 
@@ -265,7 +305,7 @@ button {
 }
 
 .filter-subtitle {
-    margin-left: 40px;
+    margin-left: 50px;
 }
 .filter-list{
   margin-left: 40px;
@@ -321,6 +361,70 @@ button {
   display: inline;
 
 }
+
+.social-icons {
+  display: inline;
+  align-items: inline;
+  position: absolute;
+  bottom: 70px;
+  left: 1390px;
+}
+
+.icon-link {
+  margin-left: 7px;
+}
+
+.icon-link img {
+  width: 70px; /* Adjust the width as needed */
+  height: auto;
+  cursor: pointer;
+}
+
+.recipe-card {
+  position: absolute;
+  top: 700px; /* Adjust the top position as needed */
+  left: 300px; /* Adjust the left position as needed */
+
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+
+  /* Optional: Adjust the width and margin as needed */
+  width: 150px;
+  margin: 11px;
+}
+
+.recipe-card:hover {
+  transform: scale(1.05);
+}
+
+.image-container img {
+  width: 100%;
+  height: 110px;
+  border-bottom: 1px solid #ddd;
+}
+
+.info-container {
+  padding: 12px;
+}
+
+.recipe-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 550px;
+  margin-bottom: 15px;
+}
+
+.duration {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  color: #666;
+}
+
+
 </style>
 
 
