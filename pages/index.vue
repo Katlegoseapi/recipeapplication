@@ -86,6 +86,7 @@
   <div class="filter-recipes">
       <div class="filter-title">Filter Recipes</div>
       <div class="filter-subtitle">Diet</div>
+      
       <ul class="filter-list">
         <li>Dairy Free</li>
         <div class="egg-free">Egg Free</div>
@@ -116,19 +117,71 @@
               <li>Freshness</li>
               <li>Rich Nutritions</li>
              </ul>
-
+        
              <div class="recipe-card">
-  <div class="image-container">
-    <img src="~/assets/images/img1.png" alt="Recipe Image">
-  </div>
-  <div class="info-container">
-    <h3 class="recipe-title">Thai Basil Tofu Stir Fry</h3>
-    <p class="duration">30 minutes</p>
-    <!-- Add other features as needed -->
-  </div>
+
+
 </div>
 
+<div class="container">
+<div class="info-container">
+        <div class="image-container">
+    <img src="~/assets/images/smallpic1.png" alt="Recipe Image">
+  </div>
+    <div class="title">Thai Basil Tofu Stir Fry</div>
+    <div class="price">$123</div>
+    <div class="clock">30 minutes</div>
+    <div class="stars">
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <span class="star">&#9734;</span> 
+    </div>
+    <div class="comment">35</div>
+    <div class="like">55 Likes</div>
+    <div class="word">Super Dry</div>
+  </div>
 
+  <div class="info-container">
+    <div class="image-container">
+      <img src="~/assets/images/smallpic2.png" alt="Recipe Image 2">
+    </div>
+    <div class="title">Kung Pao Shrimp</div>
+    <div class="price">$123</div>
+    <div class="clock">30 minutes</div>
+    <div class="stars">
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <span class="star">&#9734;</span>
+    </div>
+    <div class="comment">35</div>
+    <div class="like">55 Likes</div>
+    <div class="word">Super Dry</div>
+  </div>
+
+
+<div class="info-container">
+    <div class="image-container">
+      <img src="~/assets/images/smallpic3.png" alt="Recipe Image 3">
+    </div>
+    <div class="title">Mexican Chicken</div>
+    <div class="price">$123</div>
+    <div class="clock">40 minutes</div>
+    <div class="stars">
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+    </div>
+    <div class="comment">40</div>
+    <div class="like">100 Likes</div>
+    <div class="word">Super Dry</div>
+  </div>
+</div>
   </header>
 </template>
 
@@ -167,6 +220,8 @@ export default {
       window.open('https://za.pinterest.com/#top', '_blank');
     },
   }
+
+  
  
 };
 
@@ -294,7 +349,7 @@ button {
 }
 
 .filter-list li {
-  margin: 10px 0;
+  margin: 8px 0;
 }
 
 .egg-free {
@@ -305,10 +360,10 @@ button {
 }
 
 .filter-subtitle {
-    margin-left: 50px;
+    margin-left: 5npm0px;
 }
 .filter-list{
-  margin-left: 40px;
+  margin-left: 35px;
 }
 
 .background-image-container {
@@ -375,55 +430,176 @@ button {
 }
 
 .icon-link img {
-  width: 70px; /* Adjust the width as needed */
+  width: 70px; 
   height: auto;
   cursor: pointer;
 }
 
 .recipe-card {
-  position: absolute;
-  top: 700px; /* Adjust the top position as needed */
-  left: 300px; /* Adjust the left position as needed */
+      display: flex;
+      align-items: flex-start;
+      max-width: 600px; 
+      margin: 0 auto; 
 
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
+    }
 
-  /* Optional: Adjust the width and margin as needed */
-  width: 150px;
-  margin: 11px;
+    .image-container {
+      margin-right: 20px;
+    }
+
+    .info-container {
+      flex: 10px;
+      margin-left: 250px;
+      margin-right: 0;
+      text-align: 250px;
+      margin-top: -600px;
+    }
+
+    .title {
+      font-size: 15px;
+      font-weight: bold;
+      width: 150px;
+      white-space: normal;
+    }
+
+    .price {
+      color: green;
+      margin-left: 180px;
+      margin-top: -33px;
+    }
+
+    .clock {
+   margin-top: 21px;
+    }
+    .comment {
+    margin-top: -20px;
+    margin-left: 1px;
+    }
+    .like {
+      margin-left: 20px;
+      margin-top: -20px;
+    }
+
+    .stars {
+      display: flex;
+      align-items: center;
+      margin-left: 142px;
+    }
+
+    .star {
+      color: gold;
+      margin-right: 3px;
+    }
+
+    .word {
+      margin-left: 150px;
+      margin-top: -30px;
+    }
+
+    .container {
+  display: flex; 
+    }
+
+.info-container {
+  margin-right: 50px;
+  
 }
 
-.recipe-card:hover {
-  transform: scale(1.05);
+.info-container:last-child 
+ {
+  margin-left: 100px; 
+}
+.info-container:last-child .price {
+  margin-top: -20px;
 }
 
-.image-container img {
-  width: 100%;
-  height: 110px;
-  border-bottom: 1px solid #ddd;
+.image-container {
+  display: inline-block; 
+}
+
+
+.title,
+.price,
+.clock,
+.stars,
+.comment,
+.like,
+.word {
+  
+}
+
+
+.container {
+  display: flex;
 }
 
 .info-container {
-  padding: 12px;
+  margin-right: 90px;
 }
 
-.recipe-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
-  font-weight: 550px;
-  margin-bottom: 15px;
+.info-container:first-child {
+  margin-right: -100px; /* Adjusted margin-right for the first image */
 }
 
-.duration {
-  font-family: 'Inter', sans-serif;
-  font-size: 10px;
-  font-weight: 400;
-  color: #666;
+.info-container:last-child {
+  margin-right: 100px; /* Adjusted margin-left for the last image */
 }
 
+.image-container {
+  display: inline-block;
+}
+
+.title,
+.price,
+.clock,
+.stars,
+.comment,
+.like,
+.word {
+  /* General styles for all containers */
+}
+
+.info-container:nth-child(3) .title,
+.info-container:nth-child(3) .price,
+.info-container:nth-child(3) .clock,
+.info-container:nth-child(3) .stars,
+.info-container:nth-child(3) .comment,
+.info-container:nth-child(3) .like,
+.info-container:nth-child(3) .word {
+  /* Specific styles for the third image components */
+}
+
+.info-container:nth-child(3) .title {
+  font-weight: bold;
+  color: black;
+}
+
+.info-container:nth-child(3) .price {
+  font-size: 18px;
+  color: green;
+  margin-top: -20px; /* Adjusted margin-top for the third image price */
+}
+
+.info-container:nth-child(3) .clock {
+  font-style: italic;
+  color: black;
+}
+
+.info-container:nth-child(3) .stars {
+  color: gold;
+}
+
+.info-container:nth-child(3) .comment {
+  color: black;
+}
+
+.info-container:nth-child(3) .like {
+  color: black;
+}
+
+.info-container:nth-child(3) .word {
+  color: black;
+}
 
 </style>
 
