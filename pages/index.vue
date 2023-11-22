@@ -115,6 +115,7 @@
              <ul class="filter-list">
               <div class="weight-loss">Weight Loss</div>
               <li>Freshness</li>
+              <li>Activeness</li>
               <li>Rich Nutritions</li>
              </ul>
         
@@ -181,8 +182,87 @@
     <div class="like">100 Likes</div>
     <div class="word">Super Dry</div>
   </div>
+
+  <div class="new-info-container">
+    <div class="new-image-container">
+      <img src="~/assets/images/image 4.png" alt="Recipe Image 3">
+    </div>
+    <div class="new-title">Egg White Bites</div>
+    <div class="new-price">$123</div>
+    <div class="new-clock">10 minutes</div>
+    <div class="new-stars">
+      <span class="new-star">&#9733;</span>
+      <span class="new-star">&#9733;</span>
+      <span class="new-star">&#9733;</span>
+      <span class="new-star">&#9733;</span>
+      <span class="new-star">&#9733;</span>
+    </div>
+    <div class="new-comment">80</div>
+    <div class="new-like">100 Likes</div>
+    <div class="new-word">Super Dry</div>
+  </div>
+
+ <div class="new-info-container">
+    <div class="new-image-container">
+      <img src="~/assets/images/image 5.png" alt="Recipe Image 3">
+    </div>
+    <div class="new-title">Greek Faro Salad</div>
+    <div class="new-price">$123</div>
+    <div class="new-clock">15 minutes</div>
+    <div class="new-stars">
+      <span class="new-star">&#9733;</span>
+      <span class="new-star">&#9733;</span>
+      <span class="new-star">&#9733;</span>
+      <span class="new-star">&#9733;</span>
+      <span class="new-star">&#9733;</span>
+    </div>
+    <div class="new-comment">80</div>
+    <div class="new-like">100 Likes</div>
+    <div class="new-word">Super Dry</div>
+  </div>
+
+  <div class="new-info-container">
+    <div class="new-image-container">
+      <img src="~/assets/images/image 6.png" alt="Recipe Image 3">
+    </div>
+    <div class="new-title">Mediterranian Diet Snack</div>
+    <div class="new-price">$123</div>
+    <div class="new-clock">30 minutes</div>
+    <div class="new-stars">
+      <span class="new-star">&#9733;</span>
+      <span class="new-star">&#9733;</span>
+      <span class="new-star">&#9733;</span>
+      <span class="new-star">&#9733;</span>
+      <span class="new-star">&#9733;</span>
+    </div>
+    <div class="new-comment">80</div>
+    <div class="new-like">100 Likes</div>
+    <div class="new-word">Super Dry</div>
+  </div>
 </div>
-  </header>
+
+<div class="last-info-container">
+  <div class="last-image-container last-image-1">
+    <img src="~/assets/images/image 7.png" alt="Recipe Image 1">
+  </div>
+
+
+  <div class="last-image-container last-image-2">
+    <img src="~/assets/images/image 8.png" alt="Recipe Image 2">
+  </div>
+
+
+
+  <div class="last-image-container last-image-3">
+    <img src="~/assets/images/image 9.png" alt="Recipe Image 3">
+  </div>
+</div>
+</header>
+
+<footer class="site-footer">
+    <img src="~/assets/images/image 10.png" alt="Footer Image">
+  </footer>
+
 </template>
 
 <script>
@@ -224,12 +304,6 @@ export default {
   
  
 };
-
-
-
-
-
-
 
 </script>
 
@@ -440,18 +514,16 @@ button {
       align-items: flex-start;
       max-width: 600px; 
       margin: 0 auto; 
-
     }
-
     .image-container {
-      margin-right: 20px;
+      margin-right: 10px;
     }
 
     .info-container {
-      flex: 10px;
+      flex: 1;
       margin-left: 250px;
-      margin-right: 0;
-      text-align: 250px;
+      margin-right: 20px;
+      text-align: left;
       margin-top: -600px;
     }
 
@@ -499,21 +571,28 @@ button {
     .container {
   display: flex; 
     }
-
+.container {
+  padding-right: 350px;
+}
 .info-container {
-  margin-right: 50px;
+  flex: 1;
+  margin-right: 20px;
+  text-align: left;
   
 }
 
 .info-container:last-child 
  {
-  margin-left: 100px; 
+  margin-left: 0; 
+  padding-left: 50px;
 }
 .info-container:last-child .price {
   margin-top: -20px;
+  
 }
 
 .image-container {
+  margin-right: 10px;
   display: inline-block; 
 }
 
@@ -532,17 +611,19 @@ button {
 .container {
   display: flex;
 }
-
+.container {
+  padding-left: 10px;
+}
 .info-container {
-  margin-right: 90px;
+  margin-right: -150px;
 }
 
 .info-container:first-child {
-  margin-right: -100px; /* Adjusted margin-right for the first image */
+  margin-right: -100px; 
 }
 
 .info-container:last-child {
-  margin-right: 100px; /* Adjusted margin-left for the last image */
+  margin-right: -600px;
 }
 
 .image-container {
@@ -600,6 +681,148 @@ button {
 .info-container:nth-child(3) .word {
   color: black;
 }
+
+/* New styles for the last three images */
+
+.new-info-container {
+  flex: 1;
+  margin-left: 20px;
+  text-align: left;
+  margin-top: -250px; /* Adjust as needed */
+}
+
+.new-image-container {
+  margin-left: -800px; /* Adjust as needed */
+}
+
+.new-title {
+  font-size: 15px;
+  font-weight: bold;
+  width: 150px;
+  white-space: normal;
+  margin-left: -800px;
+}
+
+.new-price {
+  color: green;
+  margin-left: 80px; /* Adjust as needed */
+  margin-top: -19px;
+  margin-left: -630px;
+}
+
+.new-clock {
+  color: black;
+  margin-left: -800px;
+  margin-top: 5px;
+}
+
+.new-comment {
+  color: black;
+  margin-left: -800px;
+  margin-top: -20px;
+}
+
+.new-like {
+color: black;
+margin-left: -770px;
+margin-top: -20px;
+}
+
+.new-stars {
+  display: flex;
+  align-items: center;
+  margin-left: -659px; /* Adjust as needed */
+}
+
+.new-star {
+  color: gold;
+  margin-right: 3px;
+}
+
+.new-word {
+  margin-left: -650px; /* Adjust as needed */
+  margin-top: -35px;
+}
+
+/* 2nd Image 2nd Row= */
+
+.container {
+  display: flex; 
+    }
+.container {
+  padding-right: 350px;
+}
+.new-info-container {
+  flex: 1;
+  margin-right: 310px;
+  text-align: left;
+  
+}
+
+.new-info-container:last-child 
+ {
+  margin-left: 0; 
+  padding-left: 70px;
+}
+.new-info-container:last-child .price {
+  margin-top: -20px;
+  
+}
+
+.new-image-container {
+  margin-right: 10px;
+  display: inline-block; 
+}
+
+
+.new-title,
+.new-price,
+.new-clock,
+.new-stars,
+.new-comment,
+.new-like,
+.new-word {
+  
+}
+
+/* 3rd image, 2nd row= */
+
+
+.last-info-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  gap: 150px;
+  margin-right: 500px; 
+  margin-top: 50px;
+}
+
+.last-image-container last-image-1 {
+  bottom: 80px;
+  
+}
+
+.last-image-container:last-image-2 {
+  bottom: 80px;
+}
+
+.last-image-container:last-image-3 {
+  bottom: 50px;
+  
+}
+
+.site-footer {
+    text-align: center;
+    padding: 0px;
+    background-color: #333; /* Adjust the background color as needed */
+    color: white;
+  }
+
+  .site-footer img {
+    width: 100%;
+    height: 100%; /* Adjust the width of your footer image */
+  }
 
 </style>
 
