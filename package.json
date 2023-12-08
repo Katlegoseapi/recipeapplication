@@ -8,7 +8,13 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
+    
   },
+  
+  "overrides": {
+    "vue": "latest"
+  },
+  
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "nuxt": "^3.8.0",
@@ -19,6 +25,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "@pinia/nuxt": "^0.5.1",
     "abbrev": "^1.1.1",
     "acorn": "^8.11.2",
     "agent-base": "^7.1.0",
@@ -324,6 +331,7 @@
     "picocolors": "^1.0.0",
     "picomatch": "^2.3.1",
     "pify": "^2.3.0",
+    "pinia": "^2.1.7",
     "pkg-types": "^1.0.3",
     "postcss": "^8.4.31",
     "postcss-calc": "^9.0.1",
@@ -425,9 +433,9 @@
     "statuses": "^2.0.1",
     "std-env": "^3.4.3",
     "streamx": "^2.15.2",
+    "string_decoder": "^1.3.0",
     "string-width": "^4.2.3",
     "string-width-cjs": "^4.2.3",
-    "string_decoder": "^1.3.0",
     "strip-ansi": "^6.0.1",
     "strip-ansi-cjs": "^6.0.1",
     "strip-final-newline": "^3.0.0",
@@ -506,7 +514,10 @@
     "yargs-parser": "^21.1.1",
     "zhead": "^2.2.4",
     "zip-stream": "^5.0.1"
+  
   },
+  
   "author": "",
   "license": "ISC"
 }
+
