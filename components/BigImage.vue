@@ -82,7 +82,7 @@
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   background-color: auto;
-  color: white;
+  color: black;
   font-size: 24px;
   padding: 24px 80px;
   border: 1px solid;

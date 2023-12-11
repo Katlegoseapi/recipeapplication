@@ -1,7 +1,7 @@
 <template>
      <div class="filter-recipes">
-      <div class="filter-title">Filter Recipes</div>
-      <div class="navigation">
+       <div class="filter-title">Filter Recipes</div>
+        <div class="navigation">
         <a href="#">Home</a>
         <a href="#">Explore</a>
         <a href="#">Help</a>
@@ -69,21 +69,16 @@ export default {
   display: flex;
   justify-content: center;
   flex-direction: center;
-  /* Stack items vertically */
   align-items: center;
-  /* Center items horizontally */
   background-color: white;
   padding: 0px;
-  /* Add padding to the container */
 }
 
 .navigation a {
   color: rgb(166, 238, 144);
   text-decoration: underline overline;
   padding: 10px;
-  /* Adjust the padding for each link */
   margin: 10px 0;
-  /* Add margin to create space between links */
   word-break: break-all;
 }
 

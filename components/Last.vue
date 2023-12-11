@@ -71,7 +71,6 @@ export default {
 .background-footer {
   position: relative;
   height: 300px;
-  /* Adjust the height as needed */
   background: url('~/assets/images/image 10.png') center/cover no-repeat;
 }
 
@@ -95,7 +94,6 @@ export default {
 
 .footer-logo {
   width: 100px;
-  /* Adjust as needed */
   height: auto;
   margin-bottom: 10px;
 }
@@ -133,7 +131,6 @@ export default {
   border-radius: 5px;
 }
 
-/* Style for the email input */
 .search-bar input[type="text"] {
   flex: 1;
   padding: 8px;
@@ -142,7 +139,7 @@ export default {
   outline: none;
 }
 
-/* Style for the email icon */
+
 .search-bar .email-icon {
   margin-left: 5px;
   font-size: 20px;
@@ -150,7 +147,6 @@ export default {
 
 .footer-social-icons img {
   width: 20px;
-  /* Adjust as needed */
   margin-right: 10px;
   color: auto;
 }

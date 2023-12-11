@@ -15,7 +15,6 @@
   
   <script>
   export default {
-    name: 'Header',
   };
   
   </script>
@@ -25,11 +24,10 @@
  {
   display: flex;
   justify-content: space-between;
-  word-spacing: 25px;
   align-items: center;
   background-color: #000000;
   color: #fff;
-  padding: 20px;
+  padding: 25px;
 }
 .left {
   display: flex;

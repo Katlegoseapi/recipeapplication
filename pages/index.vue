@@ -174,12 +174,22 @@ import SideTexts from '@/components/SideTexts.vue';
 import Last from '@/components/Last.vue';
 
 export default {
-
-  data() {
-    return {
-      searchQuery: '',
-    };
-  },
+ data () {
+  return {
+    recipes: [
+      {
+          title: 'Thai Basil Tofu Stir Fry',
+          price: '$123',
+          clock: '30 minutes',
+          starts: 4,
+          comment: 35,
+          like: 55,
+          word: 'Super Dry',
+          image: '~/assets/images/smallpic1.png',
+      }
+    ]
+  }
+ }
 
 };
 
