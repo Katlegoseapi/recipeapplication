@@ -1,12 +1,10 @@
 <template>
-
-
-      <Heading />
+  <Heading />
 
 
   <header>
 
-      <Navigation />
+    <Navigation />
 
     <div class="icons-container">
       <i class="icons-icons"></i>
@@ -19,150 +17,51 @@
     <BigImage />
 
     <SideTexts />
-    
+
     <div class="recipe-card">
-
-
     </div>
 
     <div class="container">
-      <div class="info-container">
-        <div class="image-container">
-          <img src="~/assets/images/smallpic1.png" alt="Recipe Image">
+
+      <div class="recipes-card" v-for="(recipe, index) in recipes" :key="index">
+        <div class="info-container">
+          <div class="image-container">
+            <img :src="recipe.image" alt="Recipe Image">
+          </div>
+          <div class="title">{{ recipe.title }}</div>
+          <div class="price">{{ recipe.price }}</div>
+          <div class="clock">{{ recipe.clock }}</div>
+          <div class="stars">
+            <span v-for="star in recipe.stars" :key="star" class="star">★</span>
+            <span v-for="star in recipe.stars" :key="star" class="star">★</span>
+          </div>
+          <div class="comment">{{ recipe.comment }}</div>
+          <div class="like">{{ recipe.like }}</div>
+          <div class="word">{{ recipe.word }}</div>
         </div>
-        <div class="title">Thai Basil Tofu Stir Fry</div>
-        <div class="price">$123</div>
-        <div class="clock">30 minutes</div>
-        <div class="stars">
-          <span class="star">&#9733;</span>
-          <span class="star">&#9733;</span>
-          <span class="star">&#9733;</span>
-          <span class="star">&#9733;</span>
-          <span class="star">&#9734;</span>
-        </div>
-        <div class="comment">35</div>
-        <div class="like">55 Likes</div>
-        <div class="word">Super Dry</div>
       </div>
 
-      <div class="info-container">
-        <div class="image-container">
-          <img src="~/assets/images/smallpic2.png" alt="Recipe Image 2">
+      <div class="last-info-container">
+        <div class="last-image-container last-image-1">
+          <img src="~/assets/images/image 7.png" alt="Recipe Image 1">
         </div>
-        <div class="title">Kung Pao Shrimp</div>
-        <div class="price">$123</div>
-        <div class="clock">30 minutes</div>
-        <div class="stars">
-          <span class="star">&#9733;</span>
-          <span class="star">&#9733;</span>
-          <span class="star">&#9733;</span>
-          <span class="star">&#9733;</span>
-          <span class="star">&#9734;</span>
+
+
+        <div class="last-image-container last-image-2">
+          <img src="~/assets/images/image 8.png" alt="Recipe Image 2">
         </div>
-        <div class="comment">35</div>
-        <div class="like">55 Likes</div>
-        <div class="word">Super Dry</div>
-      </div>
 
 
-      <div class="info-container">
-        <div class="image-container">
-          <img src="~/assets/images/smallpic3.png" alt="Recipe Image 3">
+
+        <div class="last-image-container last-image-3">
+          <img src="~/assets/images/image 9.png" alt="Recipe Image 3">
         </div>
-        <div class="title">Mexican Chicken</div>
-        <div class="price">$123</div>
-        <div class="clock">40 minutes</div>
-        <div class="stars">
-          <span class="star">&#9733;</span>
-          <span class="star">&#9733;</span>
-          <span class="star">&#9733;</span>
-          <span class="star">&#9733;</span>
-          <span class="star">&#9733;</span>
-        </div>
-        <div class="comment">40</div>
-        <div class="like">100 Likes</div>
-        <div class="word">Super Dry</div>
-      </div>
-
-      <div class="new-info-container">
-        <div class="new-image-container">
-          <img src="~/assets/images/image 4.png" alt="Recipe Image 3">
-        </div>
-        <div class="new-title">Egg White Bites</div>
-        <div class="new-price">$123</div>
-        <div class="new-clock">10 minutes</div>
-        <div class="new-stars">
-          <span class="new-star">&#9733;</span>
-          <span class="new-star">&#9733;</span>
-          <span class="new-star">&#9733;</span>
-          <span class="new-star">&#9733;</span>
-          <span class="new-star">&#9733;</span>
-        </div>
-        <div class="new-comment">80</div>
-        <div class="new-like">100 Likes</div>
-        <div class="new-word">Super Dry</div>
-      </div>
-
-      <div class="new-info-container">
-        <div class="new-image-container">
-          <img src="~/assets/images/image 5.png" alt="Recipe Image 3">
-        </div>
-        <div class="new-title">Greek Faro Salad</div>
-        <div class="new-price">$123</div>
-        <div class="new-clock">15 minutes</div>
-        <div class="new-stars">
-          <span class="new-star">&#9733;</span>
-          <span class="new-star">&#9733;</span>
-          <span class="new-star">&#9733;</span>
-          <span class="new-star">&#9733;</span>
-          <span class="new-star">&#9733;</span>
-        </div>
-        <div class="new-comment">80</div>
-        <div class="new-like">100 Likes</div>
-        <div class="new-word">Super Dry</div>
-      </div>
-
-      <div class="new-info-container">
-        <div class="new-image-container">
-          <img src="~/assets/images/image 6.png" alt="Recipe Image 3">
-        </div>
-        <div class="new-title">Mediterranian Diet Snack</div>
-        <div class="new-price">$123</div>
-        <div class="new-clock">30 minutes</div>
-        <div class="new-stars">
-          <span class="new-star">&#9733;</span>
-          <span class="new-star">&#9733;</span>
-          <span class="new-star">&#9733;</span>
-          <span class="new-star">&#9733;</span>
-          <span class="new-star">&#9733;</span>
-        </div>
-        <div class="new-comment">80</div>
-        <div class="new-like">100 Likes</div>
-        <div class="new-word">Super Dry</div>
-      </div>
-    </div>
-
-    <div class="last-info-container">
-      <div class="last-image-container last-image-1">
-        <img src="~/assets/images/image 7.png" alt="Recipe Image 1">
-      </div>
-
-
-      <div class="last-image-container last-image-2">
-        <img src="~/assets/images/image 8.png" alt="Recipe Image 2">
-      </div>
-
-
-
-      <div class="last-image-container last-image-3">
-        <img src="~/assets/images/image 9.png" alt="Recipe Image 3">
       </div>
     </div>
 
   </header>
 
-    <Last />
-
+  <Last />
 </template>
 
 <script>
@@ -174,22 +73,84 @@ import SideTexts from '@/components/SideTexts.vue';
 import Last from '@/components/Last.vue';
 
 export default {
- data () {
-  return {
-    recipes: [
-      {
+  data() {
+    return {
+      recipes: [
+        {
           title: 'Thai Basil Tofu Stir Fry',
           price: '$123',
           clock: '30 minutes',
-          starts: 4,
+          stars: 4,
           comment: 35,
           like: 55,
           word: 'Super Dry',
-          image: '~/assets/images/smallpic1.png',
-      }
-    ]
+          image: '/smallpic1.png',
+        },
+
+        {
+          title: 'Kung Pao Shrimp',
+          price: '$123',
+          clock: '30 minutes',
+          stars: 4,
+          comment: 35,
+          like: 55,
+          word: 'Super Dry',
+          image: '/smallpic2.png'
+
+        },
+
+        {
+
+          title: 'Mexican Chicken',
+          price: '$123',
+          clock: '40 minutes',
+          stars: 5,
+          comment: 40,
+          like: 100,
+          word: 'Super Dry',
+          image: '/smallpic3.png',
+        },
+
+        {
+          title: 'Egg White Bites',
+          price: '$123',
+          clock: '10 minutes',
+          stars: 5,
+          comment: 80,
+          like: 100,
+          word: 'Super Dry',
+          image: '/image 4.png',
+
+        },
+
+        {
+
+          title: 'Greek Faro Salad',
+          price: '$123',
+          clock: '15 minutes',
+          stars: 5,
+          comment: 80,
+          like: 100,
+          word: 'Super Dry',
+          image: '/image 5.png',
+
+        },
+
+        {
+          title: 'Mediterranian',
+          price: '$1123',
+          clock: '30 minutes',
+          stars: 5,
+          comment: 80,
+          like: 100,
+          word: 'Super Dry',
+          image: '/image 6.png',
+        },
+
+
+      ]
+    }
   }
- }
 
 };
 
@@ -256,6 +217,7 @@ export default {
 .filter-list {
   margin-left: 35px;
 }
+
 .recipe-card {
   display: flex;
   align-items: flex-start;
@@ -269,10 +231,10 @@ export default {
 
 .info-container {
   flex: 1;
-  margin-left: 250px;
-  margin-right: 20px;
+  margin-left: 100px;
+  margin-right: 15px;
   text-align: left;
-  margin-top: -600px;
+  margin-top: -500px;
 }
 
 .title {
@@ -303,7 +265,7 @@ export default {
 }
 
 .stars {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   margin-left: 142px;
 }
@@ -319,16 +281,16 @@ export default {
 }
 
 .container {
-  display: flex;
+  display: inline-flex;
 }
 
 .container {
-  padding-right: 350px;
+  padding-right: 250px;
 }
 
 .info-container {
   flex: 1;
-  margin-right: 20px;
+  margin-right: 15px;
   text-align: left;
 
 }
@@ -388,8 +350,7 @@ export default {
 .stars,
 .comment,
 .like,
-.word {
-}
+.word {}
 
 .info-container:nth-child(3) .title,
 .info-container:nth-child(3) .price,
@@ -397,8 +358,7 @@ export default {
 .info-container:nth-child(3) .stars,
 .info-container:nth-child(3) .comment,
 .info-container:nth-child(3) .like,
-.info-container:nth-child(3) .word {
-}
+.info-container:nth-child(3) .word {}
 
 .info-container:nth-child(3) .title {
   font-weight: bold;
@@ -558,7 +518,6 @@ export default {
   bottom: 50px;
 
 }
-
 </style>
 
 
