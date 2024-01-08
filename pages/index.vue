@@ -19,27 +19,31 @@
     <SideTexts />
 
     <div class="recipe-card">
-    </div>
 
-    <div class="container">
-
-      <div class="recipes-card" v-for="(recipe, index) in recipes" :key="index">
-        <div class="info-container">
-          <div class="image-container">
-            <img :src="recipe.image" alt="Recipe Image">
-          </div>
-          <div class="title">{{ recipe.title }}</div>
-          <div class="price">{{ recipe.price }}</div>
-          <div class="clock">{{ recipe.clock }}</div>
-          <div class="stars">
-            <span v-for="star in recipe.stars" :key="star" class="star">★</span>
-            <span v-for="star in recipe.stars" :key="star" class="star">★</span>
-          </div>
-          <div class="comment">{{ recipe.comment }}</div>
-          <div class="like">{{ recipe.like }}</div>
-          <div class="word">{{ recipe.word }}</div>
-        </div>
       </div>
+
+      
+      <div class="big-container">
+
+<div class="container" v-for="(recipe, index) in recipes" :key="index">
+  <div class="info-container">
+    <div class="image-container">
+      <img :src="recipe.image" alt="Recipe Image">
+    </div>
+    <div class="title">{{ recipe.title }}</div>
+    <div class="price">{{ recipe.price }}</div>
+    <div class="clock">{{ recipe.clock }}</div>
+    <div class="stars">
+      <span v-for="star in recipe.stars" :key="star" class="star">&#9733;</span>
+      <span v-for="star in recipe.stars" :key="star" class="star">&#9734;</span>
+    </div>
+    <div class="comment">{{ recipe.comment }}</div>
+    <div class="like">{{ recipe.like }}</div>
+    <div class="word">{{ recipe.word }}</div>
+  </div>
+</div>
+
+
 
       <div class="last-info-container">
         <div class="last-image-container last-image-1">
@@ -211,7 +215,7 @@ export default {
 }
 
 .filter-subtitle {
-  margin-left: 5npm0px;
+  margin-left: 50px;
 }
 
 .filter-list {
@@ -219,22 +223,25 @@ export default {
 }
 
 .recipe-card {
-  display: flex;
-  align-items: flex-start;
-  max-width: 600px;
-  margin: 0 auto;
+  display: inline-block;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .image-container {
-  margin-right: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Adjust as needed */
+  margin: 0 auto; /* Center the container, adjust margins as needed */
+  max-width: 900px;
 }
 
+
 .info-container {
-  flex: 1;
-  margin-left: 100px;
-  margin-right: 15px;
+  margin-left: 500px;
   text-align: left;
   margin-top: -500px;
+  display: inline-block;
 }
 
 .title {
@@ -280,18 +287,22 @@ export default {
   margin-top: -30px;
 }
 
-.container {
+.big-container {
   display: inline-flex;
 }
 
 .container {
-  padding-right: 250px;
+  padding-left: 200px;
+  display: inline-block;
+  flex-wrap: wrap;
+
 }
 
 .info-container {
-  flex: 1;
+  flex: wrap;
   margin-right: 15px;
   text-align: left;
+  display: inline-block;
 
 }
 
@@ -306,8 +317,8 @@ export default {
 }
 
 .image-container {
-  margin-right: 10px;
-  display: inline-block;
+  width: 30%; /* Adjust the width of each image */
+  margin-bottom: 10px;
 }
 
 
@@ -321,11 +332,14 @@ export default {
 
 
 .container {
-  display: flex;
+  display: inline-block;
+  flex-wrap: wrap;
+  
 }
 
 .container {
   padding-left: 10px;
+  display: center;
 }
 
 .info-container {
@@ -341,7 +355,7 @@ export default {
 }
 
 .image-container {
-  display: inline-block;
+  display: flex;
 }
 
 .title,
@@ -401,7 +415,7 @@ export default {
 }
 
 .new-image-container {
-  margin-left: -800px;
+  margin-left: 500px;
 }
 
 .new-title {
@@ -501,8 +515,8 @@ export default {
   justify-content: center;
   width: 100%;
   gap: 150px;
-  margin-right: 500px;
-  margin-top: 50px;
+  margin-left: 250px;
+  margin-top: 30px;
 }
 
 .last-image-container last-image-1 {
