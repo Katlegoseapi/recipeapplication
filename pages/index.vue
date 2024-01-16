@@ -2,7 +2,7 @@
   <Heading />
 
 
-  <header>
+     <header>
 
     <Navigation />
 
@@ -20,28 +20,28 @@
 
     <div class="recipe-card">
 
+    </div>
+
+
+    <div class="big-container">
+
+      <div class="container" v-for="(recipe, index) in recipes" :key="index">
+        <div class="info-container">
+          <div class="image-container">
+            <img :src="recipe.image" alt="Recipe Image">
+          </div>
+          <div class="title">{{ recipe.title }}</div>
+          <div class="price">{{ recipe.price }}</div>
+          <div class="clock">{{ recipe.clock }}</div>
+          <div class="stars">
+            <span v-for="star in recipe.stars" :key="star" class="star">&#9733;</span>
+            <span v-for="star in recipe.stars" :key="star" class="star">&#9734;</span>
+          </div>
+          <div class="comment">{{ recipe.comment }}</div>
+          <div class="like">{{ recipe.like }}</div>
+          <div class="word">{{ recipe.word }}</div>
+        </div>
       </div>
-
-      
-      <div class="big-container">
-
-<div class="container" v-for="(recipe, index) in recipes" :key="index">
-  <div class="info-container">
-    <div class="image-container">
-      <img :src="recipe.image" alt="Recipe Image">
-    </div>
-    <div class="title">{{ recipe.title }}</div>
-    <div class="price">{{ recipe.price }}</div>
-    <div class="clock">{{ recipe.clock }}</div>
-    <div class="stars">
-      <span v-for="star in recipe.stars" :key="star" class="star">&#9733;</span>
-      <span v-for="star in recipe.stars" :key="star" class="star">&#9734;</span>
-    </div>
-    <div class="comment">{{ recipe.comment }}</div>
-    <div class="like">{{ recipe.like }}</div>
-    <div class="word">{{ recipe.word }}</div>
-  </div>
-</div>
 
 
 
@@ -69,6 +69,8 @@
 </template>
 
 <script>
+
+
 
 import Heading from '@/components/Heading.vue';
 import Navigation from '@/components/Navigation.vue';
@@ -229,19 +231,15 @@ export default {
 }
 
 .image-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; /* Adjust as needed */
-  margin: 0 auto; /* Center the container, adjust margins as needed */
-  max-width: 900px;
+  margin-left: 200px;
+  margin-top: 150px;
+  display: inline-block;
 }
-
 
 .info-container {
   margin-left: 500px;
   text-align: left;
   margin-top: -500px;
-  display: inline-block;
 }
 
 .title {
@@ -302,7 +300,6 @@ export default {
   flex: wrap;
   margin-right: 15px;
   text-align: left;
-  display: inline-block;
 
 }
 
@@ -317,8 +314,9 @@ export default {
 }
 
 .image-container {
-  width: 30%; /* Adjust the width of each image */
-  margin-bottom: 10px;
+  margin-right: 50px;
+  display: inline-block;
+  margin-top: 50px;
 }
 
 
@@ -334,7 +332,7 @@ export default {
 .container {
   display: inline-block;
   flex-wrap: wrap;
-  
+
 }
 
 .container {

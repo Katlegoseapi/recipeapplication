@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Display</title>
+</head>
+<body>
+    <h1>Data from Cusines Table</h1>
+    <ul id="dataList"></ul>
+
+    <script>
+        async function fetchData() {
+            const response = await fetch('http://localhost:4000/api/cusines');
+            const data = await response.json();
+
+            const dataList = document.getElementById('dataList');
+            data.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.id} - ${item.name}`; // Adjust based on your database structure
+                dataList.appendChild(li);
+            });
+        }
+
+        fetchData();
+    </script>
+</body>
+</html>
