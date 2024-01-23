@@ -43,13 +43,13 @@
         </div>
       </div>
 
-
+   
 
       <div class="last-info-container">
         <div class="last-image-container last-image-1">
           <img src="~/assets/images/image 7.png" alt="Recipe Image 1">
         </div>
-
+     
 
         <div class="last-image-container last-image-2">
           <img src="~/assets/images/image 8.png" alt="Recipe Image 2">
@@ -77,6 +77,7 @@ import Navigation from '@/components/Navigation.vue';
 import BigImage from '@/components/BigImage.vue';
 import SideTexts from '@/components/SideTexts.vue';
 import Last from '@/components/Last.vue';
+
 
 export default {
   data() {
@@ -155,6 +156,7 @@ export default {
 
 
       ]
+      
     }
   }
 
