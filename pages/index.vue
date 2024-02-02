@@ -19,7 +19,7 @@
     <SideTexts />
 
     <div class="recipe-card">
-
+      <p> {{ count }}</p>
     </div>
 
 
@@ -40,10 +40,11 @@
           <div class="comment">{{ recipe.comment }}</div>
           <div class="like">{{ recipe.like }}</div>
           <div class="word">{{ recipe.word }}</div>
+          
         </div>
       </div>
-
-   
+    
+      
 
       <div class="last-info-container">
         <div class="last-image-container last-image-1">
@@ -68,7 +69,7 @@
   <Last />
 </template>
 
-<script>
+<script setup lang="ts">
 
 
 
@@ -77,90 +78,11 @@ import Navigation from '@/components/Navigation.vue';
 import BigImage from '@/components/BigImage.vue';
 import SideTexts from '@/components/SideTexts.vue';
 import Last from '@/components/Last.vue';
+ 
+
+const { data: count } = await useFetch ('http://localhost:3000/api/cusines')
 
 
-export default {
-  data() {
-    return {
-      recipes: [
-        {
-          title: 'Thai Basil Tofu Stir Fry',
-          price: '$123',
-          clock: '30 minutes',
-          stars: 4,
-          comment: 35,
-          like: 55,
-          word: 'Super Dry',
-          image: '/smallpic1.png',
-        },
-
-        {
-          title: 'Kung Pao Shrimp',
-          price: '$123',
-          clock: '30 minutes',
-          stars: 4,
-          comment: 35,
-          like: 55,
-          word: 'Super Dry',
-          image: '/smallpic2.png'
-
-        },
-
-        {
-
-          title: 'Mexican Chicken',
-          price: '$123',
-          clock: '40 minutes',
-          stars: 5,
-          comment: 40,
-          like: 100,
-          word: 'Super Dry',
-          image: '/smallpic3.png',
-        },
-
-        {
-          title: 'Egg White Bites',
-          price: '$123',
-          clock: '10 minutes',
-          stars: 5,
-          comment: 80,
-          like: 100,
-          word: 'Super Dry',
-          image: '/image 4.png',
-
-        },
-
-        {
-
-          title: 'Greek Faro Salad',
-          price: '$123',
-          clock: '15 minutes',
-          stars: 5,
-          comment: 80,
-          like: 100,
-          word: 'Super Dry',
-          image: '/image 5.png',
-
-        },
-
-        {
-          title: 'Mediterranian',
-          price: '$1123',
-          clock: '30 minutes',
-          stars: 5,
-          comment: 80,
-          like: 100,
-          word: 'Super Dry',
-          image: '/image 6.png',
-        },
-
-
-      ]
-      
-    }
-  }
-
-};
 
 </script>
 
