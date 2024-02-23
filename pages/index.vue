@@ -2,7 +2,7 @@
   <Heading />
 
 
-     <header>
+  <header>
 
     <Navigation />
 
@@ -19,21 +19,43 @@
     <SideTexts />
 
     <div>
-  <h1>Cuisines</h1>
-  <ul>
-    <li v-for="cusines in cusines" :key="cusines.id">{{ cusines.name }}</li>
-  </ul>
+      <h1>Cuisines</h1>
+      <ul>
+        <li v-for="cusine in cusines" :key="cusine.id">
+          <div>{{ cusine.RecipeName }}</div>
+          <div>{{ cusine.RecipeTime }}</div>
+          <div>{{ cusine.NumberOfComments }}</div>
+          <div>{{ cusine.NumberOfLikes }}</div>
+          <div>{{ cusine.Ratings }}</div>
+          <div>{{ cusine.RecipePrice }}</div>
+        </li>
+    </ul>
 
-  <h1>Diet</h1>
-  <ul>
-    <li v-for="diet in diet" :key="diet.id">{{ diet.name }}</li>
-  </ul>
+      <h1>Diet</h1>
+      <ul>
+        <li v-for="diet in diet" :key="diet.id">
+          <div>{{ diet.RecipeName }}</div>
+          <div>{{ diet.RecipeTime }}</div>
+          <div>{{ diet.NumberOfComments }}</div>
+          <div>{{ diet.NumberOfLikes }}</div>
+          <div>{{ diet.Ratings }}</div>
+          <div>{{ diet.RecipePrice }}</div>
+        </li>
+      </ul>
 
-  <h1>Bakery</h1>
-  <ul>
-    <li v-for="bakery in bakery" :key="bakery.id">{{ bakery.name }}</li>
-  </ul>
-</div>
+      <h1>Bakery</h1>
+      <ul>
+        <li v-for="bakery in bakery" :key="bakery.id">
+          <div>{{ bakery.RecipeName }}</div>
+          <div>{{ bakery.RecipeTime }}</div>
+          <div>{{ bakery.NumberOfComments }}</div>
+          <div>{{ bakery.NumberOfLikes }}</div>
+          <div>{{ bakery.Ratings }}</div>
+          <div>{{ bakery.RecipePrice }}</div>
+                    
+        </li>
+      </ul>
+    </div>
 
 
     <div class="big-container">
@@ -53,17 +75,17 @@
           <div class="comment">{{ recipe.comment }}</div>
           <div class="like">{{ recipe.like }}</div>
           <div class="word">{{ recipe.word }}</div>
-          
+
         </div>
       </div>
-    
-      
+
+
 
       <div class="last-info-container">
         <div class="last-image-container last-image-1">
           <img src="~/assets/images/image 7.png" alt="Recipe Image 1">
         </div>
-     
+
 
         <div class="last-image-container last-image-2">
           <img src="~/assets/images/image 8.png" alt="Recipe Image 2">
@@ -88,8 +110,9 @@ import Navigation from '@/components/Navigation.vue';
 import BigImage from '@/components/BigImage.vue';
 import SideTexts from '@/components/SideTexts.vue';
 import Last from '@/components/Last.vue';
- 
+
 export default {
+  async mounted() { await this.fetchData() },
   data() {
     return {
       recipes: [],
@@ -99,23 +122,23 @@ export default {
     };
   },
   methods: {
-    async fetchData(url) {
+
+    async fetchData() {
       try {
-      const [cusinesResponse, dietResponse, bakeryResponse] = await Promise.all([
-        this.fetchData('/api/cusines'),
-        this.fetchData('/api/diet'),
-        this.fetchData('/api/bakery')
-      ]);
-      this.cusines = await cusinesResponse.json();
-      this.diet = await dietResponse.json();
-      this.bakery = await bakeryResponse.json();
-    } catch (error) {
-      console.error('Error fetching data:', error);
-      // Handle error, maybe set some default values for the arrays
-      this.cusines = [];
-      this.diet = [];
-      this.bakery = [];
-    }
+        const [cusinesResponse, dietResponse, bakeryResponse] = await Promise.all([
+          $fetch('/api/cusines', { method: 'GET' }),
+          $fetch('/api/diet', { method: 'GET' }),
+          $fetch('/api/bakery', { method: 'GET' })
+          ]);
+           this.cusines = cusinesResponse
+           this.diet = dietResponse
+           this.bakery = bakeryResponse
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        this.cusines = [];
+        this.diet = [];
+        this.bakery = [];
+      }
     }
   }
 };
