@@ -18,9 +18,22 @@
 
     <SideTexts />
 
-    <div class="recipe-card">
-      <p> {{ count }}</p>
-    </div>
+    <div>
+  <h1>Cuisines</h1>
+  <ul>
+    <li v-for="cusines in cusines" :key="cusines.id">{{ cusines.name }}</li>
+  </ul>
+
+  <h1>Diet</h1>
+  <ul>
+    <li v-for="diet in diet" :key="diet.id">{{ diet.name }}</li>
+  </ul>
+
+  <h1>Bakery</h1>
+  <ul>
+    <li v-for="bakery in bakery" :key="bakery.id">{{ bakery.name }}</li>
+  </ul>
+</div>
 
 
     <div class="big-container">
@@ -69,18 +82,43 @@
   <Last />
 </template>
 
-<script setup lang="ts">
-
-
-
+<script>
 import Heading from '@/components/Heading.vue';
 import Navigation from '@/components/Navigation.vue';
 import BigImage from '@/components/BigImage.vue';
 import SideTexts from '@/components/SideTexts.vue';
 import Last from '@/components/Last.vue';
  
-
-const { data: count } = await useFetch ('http://localhost:3000/api/cusines')
+export default {
+  data() {
+    return {
+      recipes: [],
+      cusines: [],
+      diet: [],
+      bakery: []
+    };
+  },
+  methods: {
+    async fetchData(url) {
+      try {
+      const [cusinesResponse, dietResponse, bakeryResponse] = await Promise.all([
+        this.fetchData('/api/cusines'),
+        this.fetchData('/api/diet'),
+        this.fetchData('/api/bakery')
+      ]);
+      this.cusines = await cusinesResponse.json();
+      this.diet = await dietResponse.json();
+      this.bakery = await bakeryResponse.json();
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      // Handle error, maybe set some default values for the arrays
+      this.cusines = [];
+      this.diet = [];
+      this.bakery = [];
+    }
+    }
+  }
+};
 
 
 
@@ -455,10 +493,6 @@ const { data: count } = await useFetch ('http://localhost:3000/api/cusines')
 
 }
 </style>
-
-
-
-
 
 
 

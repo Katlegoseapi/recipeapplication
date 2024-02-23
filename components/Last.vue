@@ -59,9 +59,6 @@
 
 <script>
 
-export default {
-    
-  };
   
 
 </script>

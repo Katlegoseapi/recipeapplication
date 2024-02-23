@@ -1,50 +1,55 @@
 <template>
-    <div class="icons">
-      <div style="margin-top: -0px;">
-        <!-- <img src="/img/cookpal.png" alt="cookpal" /> -->
-        <img src="~/assets/images/cookpal2nd.png" alt="Discover Nuxt 3" />
+  <div class="icons">
+    <div style="margin-top: -0px;">
+      <!-- <img src="/img/cookpal.png" alt="cookpal" /> -->
+      <img src="~/assets/images/cookpal2nd.png" alt="Discover Nuxt 3" />
+    </div>
+    <div class="search-bar">
+      <div class="search-dropdown">
+        All Categories <span class="arrow-down">▼</span>
       </div>
-      <div class="search-bar">
-        <div class="search-dropdown">
-          All Categories <span class="arrow-down">▼</span>
-        </div>
-        <div class="search-input">
-          <input type="text" v-model="searchQuery" @input="performSearch" placeholder="Search..." class="wide-input" />
-          <button @click="performSearch">
-            <i class="fas fa-search"></i>
-          </button>
-
-        </div>
+      <div class="search-input">
+        <input type="text" v-model="searchQuery" @input="performSearch" placeholder="Search..." class="wide-input" />
+        <button @click="performSearch">
+          <i class="fas fa-search"></i>
+        </button>
 
       </div>
 
-      <div>
-        <img src="~/assets/cheout.png" alt="Discover Nuxt 3" width="70" height="50" />
-      </div>
-      <div class="profile-icon">
-        <img src="~/assets/images/katlego.jpeg" alt="Profile Picture" class="profile-image" />
-        <i class="fas fa-user-circle"></i>
-      </div>
     </div>
 
-    
-  </template>
+    <div>
+      <img src="~/assets/cheout.png" alt="Discover Nuxt 3" width="70" height="50" />
+    </div>
+    <div class="profile-icon">
+      <img src="~/assets/images/katlego.jpeg" alt="Profile Picture" class="profile-image" />
+      <i class="fas fa-user-circle"></i>
+    </div>
+  </div>
+</template>
   
-  <script>
-  export default {
-    name: 'Icons',
-    
-    props: {
+<script>
+
+export default {
+  data() {
+    return {
+      searchQuery: '',
+    };
+  },
+
+  name: 'Icons',
+
+  props: {
     profilePicture: {
       type: String,
       default: '/assets/images/katlego.jpeg',
     },
   },
 
-  };
-  </script>
+};
+</script>
   
-  <style scoped>
+<style scoped>
 .profile-icon {
   display: flex;
   align-items: center;
@@ -123,7 +128,5 @@ button {
   width: 100%;
   margin-left: 0px;
 }
-
-
 </style>
   
